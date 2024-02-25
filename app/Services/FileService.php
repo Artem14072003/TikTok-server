@@ -32,7 +32,7 @@ class FileService
         );
 
         $name = time() . '.' . $extension;
-        $image->save(public_path() . '/files/' . $name);
+        $image->save(storage_path('app/public/files/' . $name));
         $model->image = '/files/' . $name;
 
         return $model;
