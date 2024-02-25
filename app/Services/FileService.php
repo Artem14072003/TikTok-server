@@ -44,7 +44,6 @@ class FileService
         $extension = $video->getClientOriginalExtension();
         $name = time() . "." . $extension;
         $video->storeAs('/', $name, 'video');
-        $video->move(public_path() . "/files", $name);
         $model->video = '/video/' . $name;
 
         return $model;
