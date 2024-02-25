@@ -33,8 +33,8 @@ class FileService
         );
 
         $name = time() . '.' . $extension;
-        $image->save(Storage::putFile('file', $name));
-        $model->image = asset('storage/file' . $name);
+        $image->save(storage_path('file' . $name));
+        $model->image = Storage::putFile('file', $name);
 
         return $model;
     }
