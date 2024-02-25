@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\ProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/get-random-users', [GlobalController::class, 'getRandomUsers']);
 Route::get('/home', [HomeController::class, 'index']);
-
+Route::get('/storage/{filename}', function ($filename) {
+  return Storage::response('public/' . $filename);
+});
 Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/logged-in-user', [UserController::class, 'loggedInUser']);
     Route::post('/update-user-image', [UserController::class, "updateUserImage"]);
