@@ -56,11 +56,6 @@ return [
             'throw' => false,
         ],
 
-        'video' => [
-            'driver' => 'local',
-            'root' => '/mnt/disk',
-        ],
-
     ],
 
     /*
@@ -76,7 +71,6 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
-        public_path('video') => '/mnt/disk',
     ],
 
 ];

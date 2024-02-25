@@ -43,8 +43,8 @@ class FileService
         $video = $request->file('video');
         $extension = $video->getClientOriginalExtension();
         $name = time() . "." . $extension;
-        $video->storeAs('/', $name, 'video');
-        $model->video = '/video/' . $name;
+        $video->move(public_path('storage' . $name));
+        $model->video = '/storage/' . $name;
 
         return $model;
     }
