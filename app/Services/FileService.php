@@ -33,7 +33,7 @@ class FileService
 
         $name = time() . '.' . $extension;
         $image->save(storage_path('app/public/' . $name));
-        $model->image = '/files/' . $name;
+        $model->image = asset('storage/' . $name);
 
         return $model;
     }
