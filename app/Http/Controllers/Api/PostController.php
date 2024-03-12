@@ -28,7 +28,7 @@ class PostController extends Controller
             $post->text = $request->input("text");
             $post->save();
 
-            return response()->json(["success" => "OK"], 200);
+            return response()->json(["success" => "OK"]);
         } catch (\Exception $e) {
             return response()->json(["error" => $e->getMessage()], 400);
         }
